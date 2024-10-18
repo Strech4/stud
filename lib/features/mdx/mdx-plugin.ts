@@ -8,4 +8,4 @@ const shikiPlugin = [
     },
 ] satisfies PluggableList[number];
 
-export const rehypePlugins = [shikiPlugin] satisfies PluggableList
+export const rehypePlugin = [shikiPlugin] satisfies PluggableList
