@@ -3,8 +3,6 @@ import { getPost } from "@/lib/post-helper";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-export const dynamic = "force-static";
-
 export const generateMetadata = async (props: {
     params: { slug: string };
 }): Promise<Metadata> => {
