@@ -2,6 +2,7 @@ import type { Post } from "@/lib/post-helper";
 import { ImageResponse } from "next/og";
 import { OgImage } from "./OgImage";
 
+
 const url = process.env.VERCEL_URL ?? "http://localhost:3000";
 export const alt = "Studio-dev Components page preview"
 export const size = {
