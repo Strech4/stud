@@ -23,7 +23,7 @@ export const generateMetadata = async (props: {
     }
 };
 
-export default async function RoutePage(props: { params: { slug: string } }) {
+export default async function page(props: { params: { slug: string } }) {
 
     const post = await getPost(props.params.slug);
 

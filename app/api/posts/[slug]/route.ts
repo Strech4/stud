@@ -1,5 +1,6 @@
 import { getPost } from "@/lib/post-helper";
-import { NextRequest, NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 
 export const GET = async (
     request: NextRequest,
@@ -7,7 +8,7 @@ export const GET = async (
 ) => {
     const { slug } = props.params;
 
-    const post = getPost(slug);
+    const post = await getPost(slug);
 
     return NextResponse.json(post);
-}
+};
