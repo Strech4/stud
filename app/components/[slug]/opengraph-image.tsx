@@ -25,5 +25,8 @@ export default async function OgImagePage({
 
     return new ImageResponse(<OgImage post={post} url={URL} />, {
         ...size,
+        headers: {
+            'Content-Type': 'image/png',
+        },
     });
 }

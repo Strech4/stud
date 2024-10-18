@@ -4,16 +4,17 @@ import { MDX_COMPONENTS } from "./mdx-components"
 import { rehypePlugin } from "./mdx-plugin"
 
 export const Mdx = ({ children }: { children: string }) => {
-    return <Suspense fallback={<div>Loading...</div>}>
-        <MDXRemote
-            source={children}
-            /*  components={MDX_COMPONENTS} */
-            options={{
-                mdxOptions: {
-                    rehypePlugins: rehypePlugin,
-                },
-            }}
-        />
-    </Suspense>
-}
-
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <MDXRemote
+                source={children}
+                options={{
+                    mdxOptions: {
+                        rehypePlugins: rehypePlugin,
+                    },
+                }}
+                components={MDX_COMPONENTS}
+            />
+        </Suspense>
+    );
+};

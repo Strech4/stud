@@ -24,6 +24,9 @@ export default async function TwitterImagePage({
     )) as Post;
 
     return new ImageResponse(<OgImage post={post} url={URL} />, {
-        ...size
+        ...size,
+        headers: {
+            'Content-Type': 'image/png',
+        },
     });
 }

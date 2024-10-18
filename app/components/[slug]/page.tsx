@@ -3,6 +3,7 @@ import { Mdx } from "@/lib/features/mdx/Mdx";
 import { getPost } from "@/lib/post-helper";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { getUrl } from "./getUrl";
 
 export const dynamic = "force-static";
 
@@ -10,17 +11,20 @@ export const generateMetadata = async (props: {
     params: { slug: string };
 }): Promise<Metadata> => {
     const post = await getPost(props.params.slug);
+    const url = getUrl();
 
     if (!post) {
         return {
             title: "404 - Page Not Found",
             description: "Page not found",
+            metadataBase: new URL(url),
         };
     }
 
     return {
         title: post.title,
         description: post.description,
+        metadataBase: new URL(url),
     };
 };
 
