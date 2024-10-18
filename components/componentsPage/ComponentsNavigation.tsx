@@ -16,7 +16,7 @@ export const ComponentsNavigation = async (props: PropsWithChildren) => {
             <div className="hidden md:block">
                 <div className="fixed top-0 bottom-0 left-0 z-40 w-[220px] lg:w-[280px] bg-background overflow-y-auto">
                     <div className="flex h-full flex-col gap-2">
-                        <div className="flex h-14 items-center px-4 lg:px-6 border-b">
+                        <div className="flex h-14 items-center px-4 lg:px-6">
                             <Link href="/" className="flex items-center gap-2 font-semibold">
                                 <Image
                                     src={Logo}
