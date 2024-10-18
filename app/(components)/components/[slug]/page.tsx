@@ -3,6 +3,8 @@ import { getPost } from "@/lib/post-helper";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+export const dynamic = "force-static";
+
 export const generateMetadata = async (props: {
     params: { slug: string };
 }): Promise<Metadata> => {
@@ -21,7 +23,7 @@ export const generateMetadata = async (props: {
     }
 };
 
-export default async function page(props: { params: { slug: string } }) {
+export default async function RoutePage(props: { params: { slug: string } }) {
 
     const post = await getPost(props.params.slug);
 
