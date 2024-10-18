@@ -1,0 +1,148 @@
+---
+title: Instalation
+description: "Install all the dependencies"
+publishedAt: "2024-10-16"
+published: true
+categorie: "start"
+---
+
+
+# Install Next.js
+
+To create a new Next.js project, run the following command:
+
+```bash
+npx create-next-app@latest
+```
+
+On installation, you'll see the following prompts:
+
+```bash
+What is your project named? my-app
+Would you like to use TypeScript? No / Yes
+Would you like to use ESLint? No / Yes
+Would you like to use Tailwind CSS? No / Yes
+Would you like to use `src/` directory? No / Yes
+Would you like to use App Router? (recommended) No / Yes
+Would you like to customize the default import alias (@/*)? No / Yes
+What import alias would you like configured? @/*
+```
+
+Start app
+
+```bash
+cd my-app
+npm run dev
+```
+
+# Install Tailwind CSS
+Install tailwindcss and its peer dependencies via npm, and then run the init command to generate tailwind.config.ts
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+### Configure tailwind.config.ts
+Add the paths to all of your template files in your tailwind.config.ts file.
+
+```tsx
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+
+    // Or if using `src` directory:
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+
+### Add the Tailwind directives to your CSS
+Add the @tailwind directives for each of Tailwind’s layers to your globals.css file.
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+### Start your build process
+
+```bash
+npm run dev
+```
+
+### Start using Tailwind in your project
+Start using Tailwind’s utility classes to style your content.
+
+```tsx
+export default function Home() {
+  return (
+    <h1 className="text-3xl font-bold underline">
+      Hello world!
+    </h1>
+  )
+}
+```
+
+# Install Framer-motion
+Framer Motion requires React 18. Install framer-motion from npm
+```bash
+npm i framer-motion
+```
+Once installed, you can import Framer Motion via framer-motion.
+```tsx
+// React
+import { motion } from "framer-motion"
+
+// React Server Components
+import * as motion from "framer-motion/client"
+```
+
+# Install ShadCN UI
+Run the init command to create a new Next.js project or to setup an existing one:
+
+```bash
+npx shadcn@latest init
+```
+
+> Note You can use the -d flag for defaults i.e new-york, zinc and yes for the css variables.
+
+```bash
+npx shadcn@latest init -d
+```
+
+### Configure components.json
+You will be asked a few questions to configure components.json:
+
+```bash
+Which style would you like to use? › New York
+Which color would you like to use as base color? › Zinc
+Do you want to use CSS variables for colors? › no / yes
+```
+
+You can now start adding components to your project.
+
+```bash
+npx shadcn@latest add button
+```
+
+The command above will add the Button component to your project. You can then import it like this:
+
+```tsx
+import { Button } from "@/components/ui/button"
+ 
+export default function Home() {
+  return (
+    <div>
+      <Button>Click me</Button>
+    </div>
+  )
+}
+```
