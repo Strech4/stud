@@ -3,9 +3,6 @@ import fs from "fs/promises";
 import { z } from "zod";
 import matter from "gray-matter";
 
-
-const postDirectory = path.join(process.cwd(), "content");
-
 const PostSchema = z.object({
     title: z.string(),
     description: z.string(),
@@ -19,21 +16,24 @@ export type Post = z.infer<typeof PostSchema> & {
     content: string;
 };
 
+const postsDirectory = path.join(process.cwd(), "content");
+
 export const getPosts = async () => {
-    const files = await fs.readdir(postDirectory);
+    const files = await fs.readdir(postsDirectory);
     const fileNames = files.filter((f) => f.endsWith(".mdx"));
 
-    const posts: Post[] = []
+    const posts: Post[] = [];
     for await (const fileName of fileNames) {
-        const fullPath = path.join(postDirectory, fileName);
+        const fullPath = path.join(postsDirectory, fileName);
         const fileContent = await fs.readFile(fullPath, "utf-8");
-        const frontMatter = matter(fileContent);
+        const frontmatter = matter(fileContent);
 
-        const safeData = PostSchema.safeParse(frontMatter.data);
+        const safeData = PostSchema.safeParse(frontmatter.data);
+
         if (!safeData.success) {
-            console.error(`Failed to parse ${fileName}`);
+            console.error(`Error parsing file: ${fileName}`);
             safeData.error.issues.forEach((issue) => {
-                console.error(` - ${issue.path.join(' -> ')}: ${issue.message}`);
+                console.error(`  - ${issue.path.join(" -> ")}: ${issue.message}`);
             });
             continue;
         }
@@ -45,17 +45,18 @@ export const getPosts = async () => {
         posts.push({
             ...safeData.data,
             slug: fileName.replace(/^\d+-/, "").replace(".mdx", ""),
-            content: frontMatter.content,
-        })
+            content: frontmatter.content,
+        });
     }
-    return posts
-}
+
+    return posts;
+};
 
 
 export const getPost = async (slug: string) => {
     const posts = await getPosts();
     return posts.find((post) => post.slug === slug);
-}
+};
 
 export const getPostByCategorie = async (categorie: string) => {
     const posts = await getPosts();

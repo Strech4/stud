@@ -1,11 +1,11 @@
-import { Post } from "@/lib/post-helper";
+import type { Post } from "@/lib/post-helper";
 import { ImageResponse } from "next/og";
 import { OgImage } from "./OgImage";
 import { getUrl } from "./getUrl";
 
 const URL = getUrl();
 
-export const alt = "Codelynx posts image preview";
+export const alt = "Studio-dev Components image preview";
 export const size = {
     width: 1200,
     height: 630,
@@ -24,6 +24,6 @@ export default async function TwitterImagePage({
     )) as Post;
 
     return new ImageResponse(<OgImage post={post} url={URL} />, {
-        ...size,
+        ...size
     });
 }

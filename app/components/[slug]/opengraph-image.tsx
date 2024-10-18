@@ -1,9 +1,7 @@
-import { Post } from "@/lib/post-helper";
+import type { Post } from "@/lib/post-helper";
 import { ImageResponse } from "next/og";
 import { OgImage } from "./OgImage";
 import { getUrl } from "./getUrl";
-
-const URL = getUrl();
 
 export const alt = "Studio-dev post image preview";
 export const size = {
@@ -19,6 +17,8 @@ export default async function OgImagePage({
         slug: string;
     };
 }) {
+    const URL = getUrl();
+
     const post = (await fetch(`${URL}/api/posts/${params.slug}`).then((res) =>
         res.json()
     )) as Post;

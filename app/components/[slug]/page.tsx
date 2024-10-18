@@ -13,15 +13,15 @@ export const generateMetadata = async (props: {
 
     if (!post) {
         return {
-            title: "404 - Page introuvable",
-            description: "Page introuvable",
-        }
+            title: "404 - Page Not Found",
+            description: "Page not found",
+        };
     }
 
     return {
         title: post.title,
-        description: post.description
-    }
+        description: post.description,
+    };
 };
 
 export default async function RoutePage(props: { params: { slug: string } }) {
