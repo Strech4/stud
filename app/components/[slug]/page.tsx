@@ -5,8 +5,6 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getUrl } from "./getUrl";
 
-export const dynamic = "force-static";
-
 export const generateMetadata = async (props: {
     params: { slug: string };
 }): Promise<Metadata> => {

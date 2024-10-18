@@ -6,7 +6,6 @@ import { BentoSection } from "@/components/landing/GridSection";
 import { HeroSection } from "@/components/landing/HeroSection";
 import { HostingSection } from "@/components/landing/HostingSection";
 import Particles from "@/components/uicomponents/particles";
-import Image from "next/image";
 
 export default function Home() {
   return (
