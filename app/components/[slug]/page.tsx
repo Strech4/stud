@@ -1,3 +1,4 @@
+import { ComponentsNavigation } from "@/components/componentsPage/ComponentsNavigation";
 import { Mdx } from "@/lib/features/mdx/Mdx";
 import { getPost } from "@/lib/post-helper";
 import { Metadata } from "next";
@@ -32,7 +33,7 @@ export default async function RoutePage(props: { params: { slug: string } }) {
     }
 
     return (
-        <section className='flex flex-col h-fit'>
+        <ComponentsNavigation>
             <div className="flex justify-between text-xs text-muted-foreground border-b py-1 mb-10">
                 <h1>{post.title}</h1>
                 <p>
@@ -42,7 +43,6 @@ export default async function RoutePage(props: { params: { slug: string } }) {
             <div className="prose prose-sm lg:prose-lg ">
                 <Mdx>{post.content}</Mdx>
             </div>
-
-        </section>
+        </ComponentsNavigation>
     )
 }
