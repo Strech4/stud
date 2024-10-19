@@ -10,7 +10,6 @@ export const SideNavLink = ({ children, href, className }: PropsWithChildren<{ h
     const pathname = usePathname();
     const isActive = pathname === href;
 
-
     return (
         <Link
             href={href}

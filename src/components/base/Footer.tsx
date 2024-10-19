@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import Logo from "@/public/logo.svg"
+import Logo from "/public/logo.svg"
 import { SiteConfig } from '@/lib/SiteConfig'
 export const Footer = () => {
     return (

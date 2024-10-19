@@ -20,7 +20,7 @@ const postsDirectory = path.join(process.cwd(), "content");
 
 export const getPosts = async () => {
     const files = await fs.readdir(postsDirectory);
-    const fileNames = files.filter((f) => f.endsWith(".mdx"));
+    const fileNames = files.filter(f => f.endsWith(".mdx"));
 
     const posts: Post[] = [];
     for await (const fileName of fileNames) {

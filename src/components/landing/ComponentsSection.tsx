@@ -77,7 +77,7 @@ export const ComponentsSection = () => {
                 </p>
                 <div className='w-fit mx-auto'>
                     <Link
-                        href="/components/introduction"
+                        href="/components"
                         className={cn(
                             buttonVariants({
                                 variant: "default"

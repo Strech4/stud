@@ -1,6 +1,6 @@
 "use client"
 import React, { ReactNode, useState } from 'react'
-import Logo from "@/public/logo.svg"
+import Logo from "/public/logo.svg"
 import Image from 'next/image'
 import { buttonVariants } from '../ui/button'
 import Link from 'next/link'
@@ -43,7 +43,7 @@ const LinksList = [
     },
     {
         name: "Composants",
-        link: "/components/introduction",
+        link: "/components",
         tag: (
             <div className={cn(
                 badgeVariants({ variant: "outline" }),

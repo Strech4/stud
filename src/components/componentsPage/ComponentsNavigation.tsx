@@ -6,7 +6,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { PropsWithChildren } from "react"
-import Logo from "@/public/logo.svg"
+import Logo from "/public/logo.svg"
 import Image from "next/image"
 import { SideNav } from './SideNav';
 export const ComponentsNavigation = async (props: PropsWithChildren) => {
@@ -69,11 +69,18 @@ export const ComponentsNavigation = async (props: PropsWithChildren) => {
                         </SheetContent>
                     </Sheet>
                     <div className="w-full flex-1">
-                        <Link href="/">
+                    </div>
+                    <div className="space-x-2 text-muted-foreground">
+                        <Link href="/" className="hover:text-black transition-colors">
                             Accueil
                         </Link>
+                        <Link href="/components" className="hover:text-black transition-colors">
+                            Components
+                        </Link>
+                        <Link href="/contact" className="hover:text-black transition-colors">
+                            Contact
+                        </Link>
                     </div>
-                    <div>user avatar</div>
                 </header>
                 <main className="flex-1 flex flex-col gap-4 p-4 md:gap-8 md:p-6 h-full">
                     {props.children}
