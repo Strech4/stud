@@ -1,9 +1,9 @@
 "use client"
-
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { PropsWithChildren } from "react";
+import { SidebarMenuSubButton } from "../ui/sidebar";
 
 export const SideNavLink = ({ children, href, className }: PropsWithChildren<{ href: string, className?: string }>) => {
 
@@ -11,15 +11,14 @@ export const SideNavLink = ({ children, href, className }: PropsWithChildren<{ h
     const isActive = pathname === href;
 
     return (
-        <Link
-            href={href}
+        <SidebarMenuSubButton
             className={cn(
-                'text-muted-foreground hover:pl-2 transition-all',
-                isActive ? 'text-primary pl-2' : ' hover:text-black', // Classe spéciale si le lien est actif
+                isActive ? 'text-primary bg-sidebar-accent' : '',
                 className
             )}
+            asChild
         >
-            {children}
-        </Link>
+            <a href={href}>{children}</a>
+        </SidebarMenuSubButton>
     )
 }

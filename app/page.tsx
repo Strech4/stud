@@ -2,6 +2,7 @@ import { Footer } from "@/components/base/Footer";
 import { Navigation } from "@/components/base/Navigation";
 import { AboutSection } from "@/components/landing/AboutSection";
 import { ComponentsSection } from "@/components/landing/ComponentsSection";
+import { ContactSection } from "@/components/landing/ContactSection";
 import { BentoSection } from "@/components/landing/GridSection";
 import { HeroSection } from "@/components/landing/HeroSection";
 import { HostingSection } from "@/components/landing/HostingSection";
@@ -23,6 +24,7 @@ export default function Home() {
       <BentoSection />
       <ComponentsSection />
       <HostingSection />
+      <ContactSection />
       <Footer />
     </section>
   );

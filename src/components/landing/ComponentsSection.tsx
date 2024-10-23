@@ -44,18 +44,7 @@ export const ComponentsSection = () => {
                 </div>
             )
         },
-        {
-            Icon: FileTextIcon,
-            name: "Title",
-            description: "Here sub text description",
-            secondDesc: "",
-            className: "col-span-3 lg:col-span-1",
-            background: (
-                <div className="p-3 grid grid-cols-2 gap-2 absolute translate-x-1/2 right-1/2 top-4 w-[100%] transition-all duration-300 ease-out">
 
-                </div>
-            )
-        },
     ];
 
     return (

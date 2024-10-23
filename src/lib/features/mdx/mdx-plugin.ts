@@ -1,6 +1,7 @@
 import type { PluggableList } from "unified";
 import rehypeShiki from "@shikijs/rehype";
 import type { ShikiTransformer } from "shiki/core";
+import { visit } from 'unist-util-visit'
 
 const getFileName = (raw?: string): string | null => {
     if (!raw) return null;
@@ -41,12 +42,14 @@ const transformerMetadataLanguageClassName = (): ShikiTransformer => {
     };
 };
 
-
 const shikiPlugin = [
     rehypeShiki,
     {
         theme: "github-dark",
-        transformers: [transformerMetadataLanguageClassName()],
+        transformers: [
+            transformerMetadataLanguageClassName(),
+        ],
+
     },
 ] satisfies PluggableList[number];
 

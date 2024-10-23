@@ -1,0 +1,41 @@
+---
+title: Custom Cursor
+description: "Custom cursor build with framer-motion"
+publishedAt: "2024-10-16"
+published: false
+categorie: "component"
+---
+
+## Custom cursor
+
+### dependencies
+
+```bash
+npm i framer-motion clsx tailwind-merge
+```
+
+lib/utils.ts
+
+```tsx utils.ts
+import { ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+ 
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+```
+### Component preview
+
+### Component source code
+```tsx testComponents.tsx
+interface Props {
+    a: number;
+    b: number;
+}
+
+const add = (a, b) => a + b;
+
+console.log(add(1, 2));
+```
+
+Ici le contenue

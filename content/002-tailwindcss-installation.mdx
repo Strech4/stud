@@ -1,0 +1,63 @@
+---
+title: Install tailwindcss
+description: "Install all the dependencies"
+publishedAt: "2024-10-16"
+published: true
+categorie: "start"
+---
+
+# Install Tailwind CSS
+Install tailwindcss and its peer dependencies via npm, and then run the init command to generate tailwind.config.ts
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+### Configure tailwind.config.ts
+Add the paths to all of your template files in your tailwind.config.ts file.
+
+```tsx tailwind.config.ts
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+
+    // Or if using `src` directory:
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+
+### Add the Tailwind directives to your CSS
+Add the @tailwind directives for each of Tailwind’s layers to your globals.css file.
+
+```css globals.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+### Start your build process
+
+```bash
+npm run dev
+```
+
+### Start using Tailwind in your project
+Start using Tailwind’s utility classes to style your content.
+
+```tsx Home.tsx
+export default function Home() {
+  return (
+    <h1 className="text-3xl font-bold underline">
+      Hello world!
+    </h1>
+  )
+}
+```

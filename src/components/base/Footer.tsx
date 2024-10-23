@@ -3,20 +3,28 @@ import Link from 'next/link'
 import React from 'react'
 import Logo from "/public/logo.svg"
 import { SiteConfig } from '@/lib/SiteConfig'
+
 export const Footer = () => {
     return (
         <footer
             className='pl-5 md:pl-10 pr-5 mt-10 pt-16 pb-4 border-t grid grid-cols-12 gap-5 backdrop-blur-md'
         >
-            <div className='col-span-12 md:col-span-5 flex space-x-3 justify-center md:justify-normal'>
-                <Image
-                    src={Logo}
-                    alt='Studio-Dev Logo'
-                    className='size-8'
-                />
-                <Link href="/" className='font-semibold text-2xl'>
-                    {SiteConfig.title}
-                </Link>
+            <div className='col-span-12 md:col-span-5 flex flex-col justify-center md:justify-normal'>
+                <div className='flex space-x-3'>
+                    <Image
+                        src={Logo}
+                        alt='Studio-Dev Logo'
+                        className='size-8'
+                    />
+                    <Link href="/" className='font-semibold text-2xl'>
+                        {SiteConfig.title}
+                    </Link>
+                </div>
+                <div className='flex flex-col my-2'>
+                    <Link href={"mailto:contact@studio-dev.fr"} className='flex text-sm items-center text-muted-foreground hover:text-primary transition-colors'>
+                        contact@studio-dev.fr
+                    </Link>
+                </div>
             </div>
             <div className='col-span-12 md:col-span-7 flex'>
                 <div className='space-y-3 flex flex-col flex-1'>

@@ -36,18 +36,10 @@ export default async function RoutePage(props: { params: { slug: string } }) {
     }
 
     return (
-        <section className='flex flex-col'>
-            <div className="flex justify-between text-xs text-muted-foreground border-b py-1 mb-10">
-                <h1>{post.title}</h1>
-                <p>
-                    Last update: {new Date(post.publishedAt).toLocaleDateString()}
-                </p>
-            </div>
-            <div className='prose prose-sm lg:prose-lg'>
-                <Mdx>
-                    {post.content}
-                </Mdx>
-            </div>
+        <section className='prose prose-sm lg:prose-lg maw-w-7xl mx-auto w-full'>
+            <Mdx>
+                {post.content}
+            </Mdx>
         </section>
     );
 }

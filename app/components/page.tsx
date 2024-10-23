@@ -7,7 +7,7 @@ export default async function page() {
     return (
         <ul>
             {filenames.map((fileName) => (
-                <Link href={`/components/${fileName.slug}`}>
+                <Link key={fileName.slug} href={`/components/${fileName.slug}`}>
                     <li>{fileName.title}</li>
                 </Link>
             ))}
