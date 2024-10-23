@@ -1,6 +1,4 @@
-import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { Clipboard } from 'lucide-react';
 import { ComponentPropsWithoutRef } from 'react'
 import { CopyButton } from '../CopyButton';
 
