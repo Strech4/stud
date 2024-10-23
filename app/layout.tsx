@@ -3,9 +3,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { SiteConfig } from "@/lib/SiteConfig";
-import { Navigation } from "@/components/base/Navigation";
-import { Footer } from "@/components/base/Footer";
-import Particles from "@/components/uicomponents/particles";
 import NextTopLoader from 'nextjs-toploader';
 
 const geistSans = localFont({

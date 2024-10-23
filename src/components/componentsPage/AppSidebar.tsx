@@ -1,6 +1,4 @@
 import * as React from "react"
-import { GalleryVerticalEnd } from "lucide-react"
-
 import {
     Sidebar,
     SidebarContent,
@@ -10,13 +8,11 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
     SidebarMenuSub,
-    SidebarMenuSubButton,
     SidebarMenuSubItem,
     SidebarRail,
 } from "@/components/ui/sidebar"
 import { getPostByCategorie } from "@/lib/post-helper"
 import Image from "next/image"
-import { usePathname } from "next/navigation"
 import { SideNavLink } from "./NavLink"
 
 
